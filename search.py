@@ -83,12 +83,12 @@ def fetch_search_results(endpoint, query):
                         # Basic filtering to avoid self-referential links
                         if "search" not in link[0] and len(title) > 3:
                             links.append({"title": title, "link": link[0]})
-                except:
+                except Exception:
                     continue
             return links
         else:
             return []
-    except:
+    except Exception:
         return []
 
 def get_search_results(refined_query, max_workers=5):
